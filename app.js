@@ -1,3 +1,6 @@
+
+
+
 // *******************  01  *************************************
 
 // alert()
@@ -62,6 +65,19 @@ for ( const btn of allBtn){
 
             li.appendChild(p);
             li.appendChild(p2);
+            // to change background color of the clicked part
+            e.target.parentNode.parentNode.style.backgroundColor = 'blue';
+
+            const budget = document.getElementById('budget').innerText;
+            const convrtedBudget = parseInt(budget);
+            if (convrtedBudget - parseInt(price) < 0) {
+                alert ( ' low budget please earn more')
+                return;
+            }
+            document.getElementById('budget').innerText = convrtedBudget - parseInt(price);
+            
+            
+
             selectedContainer.appendChild(li);
 
         //    # to calculation total cost by manual
