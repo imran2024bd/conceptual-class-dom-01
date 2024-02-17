@@ -63,22 +63,26 @@ for ( const btn of allBtn){
             li.appendChild(p);
             li.appendChild(p2);
             selectedContainer.appendChild(li);
-        //    # to calculation total cost
-            const totalCost = document.getElementById('total-cost').innerText;
-            const convertedTotalCost = parseInt(totalCost);
-            const sum = convertedTotalCost + parseInt(price);
+
+        //    # to calculation total cost by manual
+            // const totalCost = document.getElementById('total-cost').innerText;
+            // const convertedTotalCost = parseInt(totalCost);
+            // const sum = convertedTotalCost + parseInt(price);
             // document.getElementById('total-cost').innerText = sum;
 
-           //    # to calculation Grand total  
+           //    # to calculation Grand total   by manual
            const grandTotal = document.getElementById('grand-total').innerText;
         //    console.log(grandTotal);
         //    console.log(typeof grandTotal);
         const convertedGrandTotal = parseInt(grandTotal);
         // console.log(typeof convertedGrandTotal);
-        const sum2 = convertedGrandTotal + sum ;
+        const sum2 = convertedGrandTotal + parseInt(price) ;
         console.log(sum2);
 
-        setInnerText('total-cost', sum);
+        //    # to calculation total cost by function
+        totalCost('total-cost' , price );
+
+        // setInnerText('total-cost', sum);
         setInnerText('grand-total', sum2);
         setInnerText('cart-count', count);
     });
@@ -86,4 +90,12 @@ for ( const btn of allBtn){
 
 function setInnerText(id , value) {
     document.getElementById(id).innerText = value; 
+}
+
+//    # to calculation total cost by function
+function totalCost(id , value) {
+    const totalCost = document.getElementById(id).innerText;
+    const convertedTotalCost = parseInt(totalCost);
+    const sum = convertedTotalCost + parseInt(value);
+    setInnerText(id, sum);
 }
