@@ -26,6 +26,18 @@
 //   # to price placename
 // console.log(e.target.parentNode.childNodes[3].childNodes[1].innerText);
 //         document.getElementById('cart-count').innerText = count;
+
+//    # to calculation total cost
+            // const totalCost = document.getElementById('total-cost').innerText;
+            // const convertedTotalCost = parseInt(totalCost);
+            // document.getElementById('total-cost').innerText = convertedTotalCost + parseInt(price);
+            // console.log(typeof parseInt(totalCost));
+
+   //         # to calculation total cost  02
+            // const totalCost = document.getElementById('total-cost').innerText;
+            // const convertedTotalCost = parseInt(totalCost);
+            // const sum = convertedTotalCost + parseInt(price);
+            // document.getElementById('total-cost').innerText = sum;
 //     });
 // }
 
@@ -54,11 +66,11 @@ for ( const btn of allBtn){
 
             const totalCost = document.getElementById('total-cost').innerText;
             const convertedTotalCost = parseInt(totalCost);
-            document.getElementById('total-cost').innerText = convertedTotalCost + parseInt(price);
-            // console.log(typeof parseInt(totalCost));
+            const sum = convertedTotalCost + parseInt(price);
+            // document.getElementById('total-cost').innerText = sum;
 
-
-        setInnerText('cart-count', count );
+        setInnerText('total-cost', sum);
+        setInnerText('cart-count', count);
     });
 }
 
